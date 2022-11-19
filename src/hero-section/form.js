@@ -1,10 +1,26 @@
 import InputField from "../components/input";
 import Button from "../components/button";
+import useValidation from "../hooks/formValidation";
+
 function Form(props) {
   const handleCloseModalClick = (e) => {
     e.preventDefault();
     props.Closehandler(false);
   };
+
+  const {
+    enteredValue: nameEnteredValue,
+    isInvalid: nameInvalid,
+    settingTouched: nameTouched,
+    ValueSetting: nameStateUpdate,
+  } = useValidation((value) => value.trim() !== "");
+
+  const {
+    enteredValue: emailEntered,
+    isInvalid: emailIsInvalid,
+    settingTouched: emailFieldTouched,
+    ValueSetting: emailStateUpdate,
+  } = useValidation((value) => value.includes("@"));
 
   return (
     <>
@@ -16,7 +32,15 @@ function Form(props) {
             placeHolder="Enter your Name"
             id="nameInputField"
             title="Name:"
+            value={nameEnteredValue}
+            handleChange={nameStateUpdate}
+            blurHandler={nameTouched}
           />
+          {nameInvalid && (
+            <p className="absolute bottom-6 left-44 text-sm text-red-400">
+              * Please Enter Correct Name
+            </p>
+          )}
         </div>
         <div>
           <InputField
@@ -24,7 +48,15 @@ function Form(props) {
             placeHolder="zarriy@outlook.com"
             id="emailInputField"
             title="Email:"
+            value={emailEntered}
+            handleChange={emailStateUpdate}
+            blurHandler={emailFieldTouched}
           />
+          {emailIsInvalid && (
+            <p className="absolute bottom-6 right-36 text-sm text-red-400">
+              * Please Enter Correct Email
+            </p>
+          )}
         </div>
 
         <Button

@@ -1,9 +1,14 @@
 import Button from "../components/button";
 import heroImage from "../media/hero-assets.png";
-function HeroSection() {
+function HeroSection(props) {
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    props.messageState(true);
+  };
+
   return (
     <>
-      <div className="mt-28 ml-12 z-10">
+      <div className="mt-32 ml-12 z-10 text-white">
         <h1 className="text-5xl leading-tight mb-3">
           We help businesses grow <br />
           with <span className="heading-italic-font">Confidence</span>
@@ -16,6 +21,7 @@ function HeroSection() {
         <Button
           text="Get Connected"
           classes="px-6 py-3 bg-emerald-900	text-white hover:bg-emerald-800"
+          handleButtonClick={handleButtonClick}
         />
       </div>
       <div className="absolute top-32 right-0 z-0 w-3/6">

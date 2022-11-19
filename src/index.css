@@ -26,3 +26,23 @@ code {
   font-style: italic;
   font-family: "Playfair Display", serif;
 }
+
+form {
+  display: flex;
+  width: 60%;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+form div {
+  display: flex;
+  gap: 10px;
+}
+input {
+  background-color: transparent;
+  border-bottom: 1px solid #e5e5e5;
+}
+input:focus {
+  outline: none;
+  border-color: rgb(5 150 105);
+}

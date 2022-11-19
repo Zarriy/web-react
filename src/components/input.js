@@ -7,6 +7,8 @@ function InputField(props) {
         type={props.type}
         value={props.value}
         placeholder={props.placeHolder}
+        onChange={props.handleChange}
+        onBlur={props.blurHandler}
       />
     </div>
   );
