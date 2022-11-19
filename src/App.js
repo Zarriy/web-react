@@ -2,6 +2,7 @@ import Header from "./header";
 import HeroSection from "./hero-section/hero";
 import ShowPortal from "./hero-section/portals";
 import { useState } from "react";
+import CartDisplay from "./hero-section/cart";
 
 function App() {
   const [messageUs, setMessageUs] = useState(false);
