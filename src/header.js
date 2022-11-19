@@ -23,8 +23,12 @@ function Header() {
         </div>
         <div>
           <ul className="nav-elements flex flex-row gap-20 font-medium text-lg">
-            <li>About</li>
-            <li>Shop</li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#shop">Shop</a>
+            </li>
             <li className="text-2xl">
               <Button
                 handleButtonClick={CartClickBtn}

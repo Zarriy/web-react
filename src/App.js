@@ -2,7 +2,9 @@ import Header from "./header";
 import HeroSection from "./hero-section/hero";
 import ShowPortal from "./hero-section/portals";
 import { useState } from "react";
-import CartDisplay from "./hero-section/cart";
+import About from "./about/About";
+import Shop from "./shop/shop";
+import Footer from "./footer";
 
 function App() {
   const [messageUs, setMessageUs] = useState(false);
@@ -15,6 +17,9 @@ function App() {
       {messageUs && <ShowPortal Statehandler={handleMessagingState} />}
       <Header />
       <HeroSection messageState={handleMessagingState} />
+      <About />
+      <Shop />
+      <Footer />
     </>
   );
 }

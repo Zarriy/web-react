@@ -3,12 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #52796f;
+  overflow-x: hidden;
 }
 
 code {
@@ -26,7 +30,9 @@ code {
   font-style: italic;
   font-family: "Playfair Display", serif;
 }
-
+.h2-fontFamily {
+  font-family: "Playfair Display", serif;
+}
 form {
   display: flex;
   width: 60%;
